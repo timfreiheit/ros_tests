@@ -1,7 +1,7 @@
 <launch>
 	<!--******************* Simulation Configuration Parameters **********************************-->
 	<!--Set number of robots to use.  1-9 robots can be selected -->
-	<arg name="number_of_robots" value = "6" />
+	<arg name="number_of_robots" value = "1" />
 	
 	<!--Set robot oni-directioanl sense distance in meters -->
 	<arg name="sense_distance" value = "6.0" />
@@ -23,7 +23,8 @@
 		<arg name="mapFile" value="$(arg map_yaml_file)" />
 	</include>
 	
+<!--
 	<include file="$(find tf_sim)/launch/launch_$(arg number_of_robots).launch" />
-	
+	-->
 	
 </launch>

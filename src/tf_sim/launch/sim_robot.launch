@@ -19,7 +19,7 @@
 	</node>
 	
 	<!-- Launch Move Base For Navigation Only-->
-	<group ns = "nav">
+	<!--<group ns = "nav">
 		<node pkg="move_base" type="move_base" respawn="false" name="move_base_node_nav" output="screen">
 			<remap from="map" to="/map" />
 			<param name="controller_frequency" value="10.0" />
@@ -29,7 +29,7 @@
 			<rosparam file="$(find tf_sim)/config/global_costmap_params.yaml" command="load" />
 			<rosparam file="$(find tf_sim)/config/base_local_planner_params.yaml" command="load" />
 		</node>
-	</group>
+	</group>-->
 
 	<!-- Launch Localization -->
 	<node pkg="fake_localization" type="fake_localization" name="fake_localization" respawn="false" output="screen">
