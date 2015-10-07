@@ -8,7 +8,7 @@
 	<param name="rob_num" value="$(arg num)" />
 	
 	<!-- Launch Move Base -->
-	<node pkg="move_base" type="move_base" respawn="false" name="move_base_node" output="screen">
+	<!--<node pkg="move_base" type="move_base" respawn="false" name="move_base_node" output="screen">
 		<remap from="map" to="/map" />
 		<param name="controller_frequency" value="10.0" />
 		<rosparam file="$(find tf_sim)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
@@ -16,7 +16,7 @@
 		<rosparam file="$(find tf_sim)/config/local_costmap_params.yaml" command="load" />
 		<rosparam file="$(find tf_sim)/config/global_costmap_params.yaml" command="load" />
 		<rosparam file="$(find tf_sim)/config/base_local_planner_params.yaml" command="load" />
-	</node>
+	</node>-->
 	
 	<!-- Launch Move Base For Navigation Only-->
 	<!--<group ns = "nav">
@@ -32,11 +32,18 @@
 	</group>-->
 
 	<!-- Launch Localization -->
-	<node pkg="fake_localization" type="fake_localization" name="fake_localization" respawn="false" output="screen">
+	<!-- <node pkg="fake_localization" type="fake_localization" name="fake_localization" respawn="false" output="screen">
 		<param name="odom_frame_id" value="$(arg prefix)/odom" />
 		<param name="base_frame_id" value="$(arg prefix)/base_link" />
-	</node>
+	</node> -->
 	
-	<!-- Launch Searched Cells Node -->
-	<!--<node pkg="gen2_frontier" type="robotSearched.py" name="robotSearched" output="screen" />-->
+	<param name="use_sim_time" value="true" />
+
+  	<node pkg="gmapping" type="slam_gmapping" name="gmapping" output="screen" >
+		<param name="base_frame" value="$(arg prefix)/base_link"/>
+		<param name="odom_frame" value="$(arg prefix)/odom"/>
+    		<remap from="scan" to="base_scan" />
+    		<remap from="base_link" to="$(arg prefix)/base_link" />
+    		<remap from="odom" to="$(arg prefix)/odom" />
+  	</node>
 </launch>

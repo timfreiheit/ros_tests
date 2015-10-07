@@ -19,5 +19,5 @@
 -->
 	
 	<!-- Launch RVIV for System Visualization -->
-	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find tf_sim)/rviz.rviz" /> 
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find tf_sim)/stage.rviz" /> 
 </launch>
