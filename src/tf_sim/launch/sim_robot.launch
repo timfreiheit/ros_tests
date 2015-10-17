@@ -26,6 +26,10 @@
   	<node pkg="gmapping" type="slam_gmapping" name="gmapping" output="screen" >
 		<param name="base_frame" value="$(arg prefix)/base_link"/>
 		<param name="odom_frame" value="$(arg prefix)/odom"/>
+		<param name="linearUpdate" value="0.5"/>
+		<param name="maxRange" value="10"/>
+		<param name="maxUrange" value="5"/>
+
     		<remap from="scan" to="base_scan" />
     		<remap from="base_link" to="$(arg prefix)/base_link" />
     		<remap from="odom" to="$(arg prefix)/odom" />
@@ -33,4 +37,5 @@
 
 	<node pkg="tf" type="static_transform_publisher" name="odom_to_map"
     		args="0 0  0 0 0 0  $(arg prefix)/map $(arg prefix)/odom 100" />
+
 </launch>
