@@ -1,0 +1,28 @@
+<package>
+  <name>explore</name>
+  <version>0.3.0</version>
+  <description>A node that provides frontier based exploration.</description>
+  <author>Charles DuHadway (maintained by Benjamin Pitzer)</author>
+  <license>BSD</license>
+
+  <author email="paul@bovbel.com">Paul Bovbel</author>
+  <maintainer email="paul@bovbel.com">Paul Bovbel</maintainer>
+
+  <url>http://ros.org/wiki/explore</url>
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>costmap_2d</build_depend>
+  <build_depend>actionlib</build_depend>
+  <build_depend>move_base_msgs</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>roslib</build_depend>
+  <build_depend>navfn</build_depend>
+  <build_depend>visualization_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  
+  <export>
+  <cpp cflags="-I${prefix}/include `rosboost-cfg --cflags`" lflags="-Wl,-rpath,${prefix}/lib -L${prefix}/lib `rosboost-cfg --lflags thread` -lexplore"/>
+  </export>
+  
+</package>

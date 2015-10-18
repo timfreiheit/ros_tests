@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>gen2_maps</name>
+  <name>tf_maps</name>
   <version>0.0.0</version>
-  <description>The gen2_maps package</description>
+  <description>The tf_maps package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->

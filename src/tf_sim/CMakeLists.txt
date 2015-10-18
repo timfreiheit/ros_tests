@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(gen2_sim)
+project(tf_sim)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
